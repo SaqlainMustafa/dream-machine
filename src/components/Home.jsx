@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Layout from './Layout'
 function Home() {
     const [loading, setLoading] = useState(true)
+    const [progress, setProgress] = useState(0)
     useEffect(() => {
         // setTimeout(() => {
         //     setLoading(false);
@@ -9,9 +10,15 @@ function Home() {
     }, [])
 
     const handleImageShow = () => {
+        let interval = setInterval(() => {
+            setProgress(prev => {
+                return prev > 100 ? prev : prev + 1;
+            })
+        },45)
         setTimeout(() => {
             setLoading(false);
-        }, 3000)
+            clearInterval(interval);
+        }, 5000)
     }
 
     return (
@@ -68,7 +75,7 @@ function Home() {
                                 <p className='dream-machine-text'>Dream machine running</p>
                                 {/* <Progress done="100" /> */}
                                 <div className="App">
-                                    <Progressbar />
+                                    <Progressbar progress ={progress} />
                                 </div>
                             </div>
                         </div>
@@ -101,31 +108,18 @@ export default Home
 // }
 
 
-
-
-
-
-
-const Progressbar = () => {
-    const [filled, setFilled] = useState(0);
-    const [isRunning, setIsRunning] = useState(false);
-    useEffect(() => {
-        if (filled < 100 && isRunning) {
-            setTimeout(() => setFilled(prev => prev += 2), 10)
-        }
-    }, [filled, isRunning])
+const Progressbar = ({progress}) => {
     return (
         <div>
             <div className="progressbar">
                 <div style={{
                     height: "100%",
-                    width: `${filled}%`,
+                    width: `${progress}%`,
                     backgroundColor: "#a66cff",
                     transition: "width 0.5s"
                 }}></div>
                 <span className="progressPercent"></span>
             </div>
-            <button className="btn" onClick={() => { setIsRunning(true) }}>Run</button>
         </div>
     )
 }
