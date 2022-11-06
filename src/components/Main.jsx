@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Home from './Home'
 import Profile from './Profile'
-import Header from './Header'
-// import img1 from '../../public/iamges/Home.png'
 
 function Main() {
     const [home, setHome] = useState(true)

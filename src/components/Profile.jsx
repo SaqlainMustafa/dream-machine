@@ -34,7 +34,7 @@ function SignUp({ hanldeLoginScreen }) {
     <>
       <div className="signup-form-container">
         <div className="container">
-          <div className="form-section">
+          <div className="form-section animate__animated animate__fadeInDown">
             <h1 className='signup-heading'>SignUp</h1>
             <form className='signup-form'>
               <label htmlFor="firstname" className='form-label'>First Name</label>
@@ -70,7 +70,7 @@ function Login({ hanldeSignUpScreen }) {
     <>
       <div className="login-container">
         <div className="container">
-          <div className="login-section">
+          <div className="login-section animate__animated animate__fadeInDown">
             <h1 className='login-heading'>Login</h1>
             <form className='login-form'>
               <label htmlFor="email" className='form-label'>Email</label>
