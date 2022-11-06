@@ -115,8 +115,8 @@ const Progressbar = ({progress}) => {
                 <div style={{
                     height: "100%",
                     width: `${progress}%`,
-                    backgroundColor: "#a66cff",
-                    transition: "width 0.5s"
+                    backgroundColor: "#5E48E8",
+                    // transition: "width 0.5s"
                 }}></div>
                 <span className="progressPercent"></span>
             </div>
