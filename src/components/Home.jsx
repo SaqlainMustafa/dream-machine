@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Layout from './Layout'
+import { Link } from 'react-router-dom'
 function Home() {
     const [loading, setLoading] = useState(true)
     const [progress, setProgress] = useState(0)
@@ -44,24 +45,30 @@ function Home() {
                                     <div className="img-left-content">
                                     {!loading &&
                                         <div className="img-1">
+                                            <Link to ="#">
                                                 <img className='horse-img' src='./images/home-img-1.png' alt='' />
+                                            </Link>
                                             <p className='horse-img-desiner-name'>Liso</p>
                                         </div>}
+
+                                        {!loading &&
                                         <div className="img-2">
-                                            {!loading &&
-                                                <img className='cartoon-img' src='./images/home-img-3.png' alt='' />}
+                                            <Link to ="#">
+                                                <img className='cartoon-img' src='./images/home-img-3.png' alt='' />
+                                            </Link>
                                         </div>
+                                        }
                                     </div>
                                     <div className="img-right-content mt-lg-0 mt-5">
                                     {!loading &&
                                         <div className="img-3">
-                                            
                                                 <div className="dish-img-detail">
-
-                                                    <img className='dish-img' src='./images/home-img-2.png' alt='' />
-                                                    <div className="dish-img-upper-text">
-                                                        <p className='dish-img-text'>A bowl of soup that looks like monster knitted out of wool</p>
-                                                    </div>
+                                                    <Link to ="#">
+                                                        <img className='dish-img' src='./images/home-img-2.png' alt='' />
+                                                        <div className="dish-img-upper-text">
+                                                            <p className='dish-img-text'>A bowl of soup that looks like monster knitted out of wool</p>
+                                                        </div>
+                                                    </Link>
                                                 </div>
                                             <p className='dish-img-designer-name'>Alberto</p>
                                         </div>}
