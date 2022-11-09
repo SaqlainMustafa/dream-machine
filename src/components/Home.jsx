@@ -15,7 +15,7 @@ function Home() {
             setProgress(prev => {
                 return prev > 100 ? prev : prev + 1;
             })
-        },45)
+        }, 45)
         setTimeout(() => {
             setLoading(false);
             clearInterval(interval);
@@ -30,59 +30,223 @@ function Home() {
                         <div className="mike-left-content animate__animated animate__fadeInLeft">
                             <h1 className='mike-heading'>Hey Mike</h1>
                             <div className="mike-search">
-                                <label htmlFor="upload-img" className='mike-upload-img'>Create your dreams
-                                    {/* <input className='mike-input-search' type="text" placeholder='Create your dreams' /> */}
-                                    <img className='mike-input-upload-img' src='./images/Upload.png' alt='' />
-                                </label>
-                                <input type="file" id='upload-img' className='mike-input-search' />
+                                <input className='mike-input-search' type="text" placeholder='Create your dreams' />
+                                <img className='mike-upload-img' src='./images/Upload.png' alt='' />
                             </div>
                             <div className="mike-submit-btn">
                                 <button type='btn' className='submit-btn' onClick={handleImageShow}>Submit</button>
+                            </div>
+                            <div className="mike-right-content animate__animated animate__fadeInRight">
+                                <div className="dream-machine-running d-block d-md-none mt-lg-0 mt-5">
+                                    {loading ?
+                                        <img className='dream-machine-img' src='./images/dream-img.png' alt='' /> :
+                                        <img className='dream-change-img' src='./images/home-img-1.png' alt='' />
+                                    }
+                                    <p className='dream-machine-text'>
+                                        Dream machine
+                                        {loading ? ' running' : ' done'}
+                                    </p>
+                                    <div className="App">
+                                        <Progressbar progress={progress} />
+                                    </div>
+                                </div>
                             </div>
                             <div className="img-container">
                                 <p className='img-dreamer-text'>Get inspired by other Dreamers</p>
                                 <div className="img-section">
                                     <div className="img-left-content">
-                                    {!loading &&
                                         <div className="img-1">
-                                            <Link to ="#">
-                                                <img className='horse-img' src='./images/home-img-1.png' alt='' />
-                                            </Link>
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='horse-img' src='./images/home-img-1.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>Austronaut riding a horse in space</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
                                             <p className='horse-img-desiner-name'>Liso</p>
-                                        </div>}
-
-                                        {!loading &&
-                                        <div className="img-2">
-                                            <Link to ="#">
-                                                <img className='cartoon-img' src='./images/home-img-3.png' alt='' />
-                                            </Link>
                                         </div>
-                                        }
+
+                                        <div className="img-2">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='cartoon-img' src='./images/home-img-3.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>cartoon Playing gathering</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="img-right-content mt-lg-0 mt-5">
-                                    {!loading &&
                                         <div className="img-3">
-                                                <div className="dish-img-detail">
-                                                    <Link to ="#">
-                                                        <img className='dish-img' src='./images/home-img-2.png' alt='' />
-                                                        <div className="dish-img-upper-text">
-                                                            <p className='dish-img-text'>A bowl of soup that looks like monster knitted out of wool</p>
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='dish-img' src='./images/home-img-2.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>A bowl of soup that looks like monster knitted out of wool</p>
                                                         </div>
-                                                    </Link>
-                                                </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
                                             <p className='dish-img-designer-name'>Alberto</p>
-                                        </div>}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="img-section">
+                                    <div className="img-left-content">
+                                        <div className="img-1">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='horse-img' src='./images/home-img-1.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>Austronaut riding a horse in space</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <p className='horse-img-desiner-name'>Liso</p>
+                                        </div>
+
+                                        <div className="img-2">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='cartoon-img' src='./images/home-img-3.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>cartoon Playing gathering</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="img-right-content mt-lg-0 mt-5">
+                                        <div className="img-3">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='dish-img' src='./images/home-img-2.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>A bowl of soup that looks like monster knitted out of wool</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <p className='dish-img-designer-name'>Alberto</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="img-section">
+                                    <div className="img-left-content">
+                                        <div className="img-1">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='horse-img' src='./images/home-img-1.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>Austronaut riding a horse in space</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <p className='horse-img-desiner-name'>Liso</p>
+                                        </div>
+
+                                        <div className="img-2">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='cartoon-img' src='./images/home-img-3.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>cartoon Playing gathering</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="img-right-content mt-lg-0 mt-5">
+                                        <div className="img-3">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='dish-img' src='./images/home-img-2.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>A bowl of soup that looks like monster knitted out of wool</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <p className='dish-img-designer-name'>Alberto</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="img-section">
+                                    <div className="img-left-content">
+                                        <div className="img-1">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='horse-img' src='./images/home-img-1.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>Austronaut riding a horse in space</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <p className='horse-img-desiner-name'>Liso</p>
+                                        </div>
+
+                                        <div className="img-2">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='cartoon-img' src='./images/home-img-3.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>cartoon Playing gathering</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="img-right-content mt-lg-0 mt-5">
+                                        <div className="img-3">
+                                            <div className="img-detail">
+                                                <Link to="#">
+                                                    <img className='dish-img' src='./images/home-img-2.png' alt='' />
+                                                    <div className="overlay">
+                                                        <div className="content">
+                                                            <p className='img-overlay-text'>A bowl of soup that looks like monster knitted out of wool</p>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                            <p className='dish-img-designer-name'>Alberto</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="mike-right-content animate__animated animate__fadeInRight">
-                            <div className="dream-machine-running mt-lg-0 mt-5">
-                                <img className='dream-machine-img' src='./images/dream-img.png' alt='' />
-                                <p className='dream-machine-text'>Dream machine running</p>
-                                {/* <Progress done="100" /> */}
+                            <div className="dream-machine-running d-none d-md-block mt-lg-0 mt-5">
+                                {loading ?
+                                    <img className='dream-machine-img' src='./images/dream-img.png' alt='' /> :
+                                    <img className='dream-change-img' src='./images/dream-machine-done.png' alt='' />
+                                }
+                                <p className='dream-machine-text'>
+                                    Dream machine
+                                    {loading ? ' running' : ' done'}
+                                </p>
                                 <div className="App">
-                                    <Progressbar progress ={progress} />
+                                    <Progressbar progress={progress} />
                                 </div>
                             </div>
                         </div>
@@ -93,29 +257,9 @@ function Home() {
 
     )
 }
-
 export default Home
 
-// const Progress = ({ done }) => {
-//     const [style, setStyle] = useState({})
-
-//     setTimeout(() => {
-//         const newStyle = {
-//             opacity: 1,
-//             width: `${done}%`
-//         }
-//         setStyle(newStyle);
-//     });
-//     return (
-//         <div class="progress">
-//             <div class="progress-done" style={style}>
-//             </div>
-//         </div>
-//     );
-// }
-
-
-const Progressbar = ({progress}) => {
+const Progressbar = ({ progress }) => {
     return (
         <div>
             <div className="progressbar">
